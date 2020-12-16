@@ -1,5 +1,6 @@
-package com.lijiat.spring5.demo2.collection;
+package com.lijiat.spring5.demo2;
 
+import com.lijiat.spring5.demo2.collection.Student;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
