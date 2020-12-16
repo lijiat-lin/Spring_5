@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置User对象的创建 -->
+    <bean id="user" class="com.lijiat.spring5.demo1.entity.User"/>
+
+    <bean id="book" class="com.lijiat.spring5.demo1.entity.Book">
+        <property name="name" value="易筋经"/>
+        <property name="author">
+            <value><![CDATA[<<南京>>]]></value>
+        </property>
+    </bean>
+
+    <bean id="order" class="com.lijiat.spring5.demo1.entity.Order">
+        <constructor-arg name="name" value="abc"/>
+        <constructor-arg name="address" value="china"/>
+        <constructor-arg name="price" value="10"/>
+    </bean>
+
+    <!-- 外部bean的注入-->
+    <bean id="userService" class="com.lijiat.spring5.demo1.service.UserService">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+    <bean id="userDao" class="com.lijiat.spring5.demo1.dao.impl.UserDaoImpl"/>
+
+    <!--内部bean-->
+    <!--级联赋值-->
+    <bean id="emp" class="com.lijiat.spring5.demo1.bean.Emp">
+        <property name="name" value="lucy"/>
+        <property name="gender" value="女"/>
+        <property name="dept" ref="dept"/>
+        <property name="dept.name" value="财务部"/>
+    </bean>
+    <bean id="dept" class="com.lijiat.spring5.demo1.bean.Dept">
+        <property name="name" value="保安部"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,2 @@
+Spring 入门案例
+通过XMl配置Bean
