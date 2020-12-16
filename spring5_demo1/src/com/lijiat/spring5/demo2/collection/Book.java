@@ -15,11 +15,4 @@ public class Book {
     public void setName(List<String> name) {
         this.name = name;
     }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "name=" + name +
-                '}';
-    }
 }

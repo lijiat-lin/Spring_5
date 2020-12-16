@@ -59,8 +59,16 @@
         <value>九阳神功</value>
     </util:list>
 
-    <bean id="book" class="com.lijiat.spring5.demo2.collection.Book">
+    <bean id="books" class="com.lijiat.spring5.demo2.collection.Book" scope="prototype">
         <property name="name" ref="booklist"/>
     </bean>
 
+    <bean id="myBean" class="com.lijiat.spring5.demo2.factory.MyBean"/>
+
+    <bean id="orders" class="com.lijiat.spring5.demo2.bean.Orders"  init-method="initMethod" destroy-method="destroyMethod">
+        <property name="name" value="订单"/>
+    </bean>
+
+    <!--配置后置处理器,获取配置的时候，所有的bean都会使用这个 后置处理器-->
+    <bean id="myBeanPost" class="com.lijiat.spring5.demo2.bean.MyBeanPost"/>
 </beans>
