@@ -1,5 +1,6 @@
 package com.lijiat.spring5.demo2;
 
+import com.lijiat.spring5.demo2.bean.Emp;
 import com.lijiat.spring5.demo2.bean.Orders;
 import com.lijiat.spring5.demo2.collection.Book;
 import com.lijiat.spring5.demo2.collection.Course;
@@ -53,5 +54,13 @@ public class TestCollection {
 
         //手动让bean实例销毁
         ((ClassPathXmlApplicationContext) context).close();
+    }
+
+    @Test
+    public void testEmp(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean2.xml");
+        Emp emp = context.getBean("emp", Emp.class);
+        System.out.println(emp);
+
     }
 }

@@ -20,4 +20,10 @@ public class Orders {
     }
 
 
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

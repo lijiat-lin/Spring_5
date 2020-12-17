@@ -24,16 +24,5 @@
     </bean>
     <bean id="userDao" class="com.lijiat.spring5.demo1.dao.impl.UserDaoImpl"/>
 
-    <!--内部bean-->
-    <!--级联赋值-->
-    <bean id="emp" class="com.lijiat.spring5.demo1.bean.Emp">
-        <property name="name" value="lucy"/>
-        <property name="gender" value="女"/>
-        <property name="dept" ref="dept"/>
-        <property name="dept.name" value="财务部"/>
-    </bean>
-    <bean id="dept" class="com.lijiat.spring5.demo1.bean.Dept">
-        <property name="name" value="保安部"/>
-    </bean>
 
 </beans>

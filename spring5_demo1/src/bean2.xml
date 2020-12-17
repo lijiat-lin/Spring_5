@@ -70,5 +70,17 @@
     </bean>
 
     <!--配置后置处理器,获取配置的时候，所有的bean都会使用这个 后置处理器-->
-    <bean id="myBeanPost" class="com.lijiat.spring5.demo2.bean.MyBeanPost"/>
+<!--    <bean id="myBeanPost" class="com.lijiat.spring5.demo2.bean.MyBeanPost"/>-->
+
+    <!--自动装配
+     bean属性标签autowire，配置自动装配
+     autowire属性常用的两个值
+           byName根据属性名称注入，注入值bean的id值和类属性名一致
+           byType 根据属性类型注入
+    -->
+    <bean id="emp" class="com.lijiat.spring5.demo2.bean.Emp" autowire="byName">
+    </bean>
+    <bean id="dept" class="com.lijiat.spring5.demo2.bean.Dept">
+        <property name="name" value="保安部"/>
+    </bean>
 </beans>
