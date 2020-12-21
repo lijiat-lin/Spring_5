@@ -27,7 +27,7 @@ public class UserService {
             userDao.updateAmount(account);
 
             //模拟异常
-            int i = 10 / 0;
+//            int i = 10 / 0;
 
             //李四多100元
             Account account1 = new Account(2,-100);
