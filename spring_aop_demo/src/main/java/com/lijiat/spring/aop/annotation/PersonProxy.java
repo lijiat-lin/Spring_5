@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 public class PersonProxy {
 
 
-    @Before(value = "execution(* com.lijiat.spring.aop.annotation.User.add(..))")
+    @Before(value = "execution(* com.lijiat.spring.aop.annotation.UserService.add(..))")
     public void before(){
         System.out.println("Person.before");
     }

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Order(2)
 public class UserProxy {
 
-    @Pointcut(value = "execution(* com.lijiat.spring.aop.annotation.User.add(..))")
+    @Pointcut(value = "execution(* com.lijiat.spring.aop.annotation.UserService.add(..))")
     private void pointDemo(){
     }
 
@@ -29,23 +29,23 @@ public class UserProxy {
         System.out.println("before。。。");
     }
 
-    @After(value = "execution(* com.lijiat.spring.aop.annotation.User.add(..))")
+    @After(value = "execution(* com.lijiat.spring.aop.annotation.UserService.add(..))")
     public void after(){
         System.out.println("after。。。");
     }
 
-    @AfterReturning(value = "execution(* com.lijiat.spring.aop.annotation.User.add(..))")
+    @AfterReturning(value = "execution(* com.lijiat.spring.aop.annotation.UserService.add(..))")
     public void afterReturning(){
         System.out.println("afterReturning。。。");
     }
 
 
-    @AfterThrowing(value = "execution(* com.lijiat.spring.aop.annotation.User.add(..))")
+    @AfterThrowing(value = "execution(* com.lijiat.spring.aop.annotation.UserService.add(..))")
     public void afterThrowing(){
         System.out.println("afterThrowing。。。");
     }
 
-    @Around(value = "execution(* com.lijiat.spring.aop.annotation.User.add(..))")
+    @Around(value = "execution(* com.lijiat.spring.aop.annotation.UserService.add(..))")
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable{
         System.out.println("around  before...");
         Object proceed = proceedingJoinPoint.proceed();

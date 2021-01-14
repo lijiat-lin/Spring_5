@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
  * @create: 2020-12-18 10:11
  */
 @Component
-public class User {
+public class UserService {
     public void add(){
-        System.out.println("com.lijiat.spring.aop.annotation.User.add");
+        System.out.println("com.lijiat.spring.aop.annotation.UserService.add");
     }
 }
